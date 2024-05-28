@@ -4,10 +4,13 @@
 
     // すべてのリンクを取得
     const links = document.querySelectorAll('a');
+    console.log('Found links:', links);
 
     // リンクをチェック
     links.forEach(link => {
+        console.log('Checking link:', link.href);
         if (link.href === 'https://www.google.com/') {
+            console.log('Google link found');
             // メッセージを表示
             const message = document.createElement('div');
             message.textContent = 'ここはGoogleのホームです';
