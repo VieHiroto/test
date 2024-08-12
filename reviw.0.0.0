@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>口コミサポートページ</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 10個の異なるテキストを配列に格納
+            var reviews = [
+                "example1: このお店は素晴らしいです！",
+                "example2: とても満足しています。",
+                "example3: 友人にも勧めたいです。",
+                "example4: サービスがとても良いです。",
+                "example5: また利用したいと思います。",
+                "example6: 最高の体験ができました。",
+                "example7: スタッフがとても親切でした。",
+                "example8: 雰囲気がとても良かったです。",
+                "example9: また来たいと思います。",
+                "example10: 非常に快適な時間を過ごしました。"
+            ];
+
+            // ランダムに1つのテキストを選ぶ
+            var randomReview = reviews[Math.floor(Math.random() * reviews.length)];
+
+            // テキストエリアに選ばれたテキストを表示
+            document.getElementById('reviewText').value = randomReview;
+        });
+    </script>
+</head>
+<body>
+    <h1>口コミのお願い</h1>
+    <p>以下の文章をコピーして、Google口コミページに貼り付けてください。</p>
+    <textarea id="reviewText" rows="5" cols="50"></textarea>
+    <br><br>
+    <button id="copyButton">コピー</button>
+    <button id="googleReviewButton">Google口コミページを開く</button>
+
+    <script>
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const reviewText = document.getElementById('reviewText');
+            reviewText.select();
+            document.execCommand('copy');
+            alert('口コミ内容がコピーされました。');
+        });
+
+        document.getElementById('googleReviewButton').addEventListener('click', function() {
+            window.open('https://g.page/r/CZwAKzpDwmkFEAE/review', '_blank');
+        });
+    </script>
+</body>
+</html>
